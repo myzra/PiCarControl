@@ -6,9 +6,6 @@ import SonicCar as SC
 import time
 import json
 
-
-
-
 try:
     with open("config.json", "r") as f:
         data = json.load(f)
