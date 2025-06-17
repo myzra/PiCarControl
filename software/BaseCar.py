@@ -3,7 +3,7 @@ import time
 
 class BaseCar:
     def __init__(self):
-        """Initialisiert die Eigenschaften und die Hinterräder."""
+        """Initialisiert die Eigenschaften und erzeugt Objekte der Klasse Backwheels und Frontwheels."""
         self.steering_angle = 0
         self.speed = 0
         self.direction = 0
@@ -11,11 +11,7 @@ class BaseCar:
         self.frontwheel = basisklassen.FrontWheels()
 
     def drive(self):
-        """Lässt das Auto für eine bestimmte Zeit fahren."""
-        
-        #print(f"Lenkwinkel {self.steering_angle} Typ: {type(self.steering_angle)}")
-        #self.frontwheel.turn(self.steering_angle)
-        print(self.speed)
+        """Lässte das Auto anhand der Variable speed entweder vorwärts oder rückwärts fahren"""
         if self.speed > 0:
                 self.back_wheels.speed = self.speed
                 print("Das Auto fährt vorwärts...")
@@ -34,6 +30,7 @@ class BaseCar:
         print("Das Auto wurde gestoppt.")
 
     def fahrmodus1(self):
+        """Bedaten der Eigenschaften des Objetkts und Aufruf der Methoden gemäß Lastenheft für Fahrmodus1"""
         self.frontwheel.turn(90)
         self.speed = 30
         self.drive()
@@ -44,6 +41,7 @@ class BaseCar:
         self.stop()
 
     def fahrmodus2(self):
+        """Bedaten der Eigenschaften des Objetkts und Aufruf der Methoden gemäß Lastenheft für Fahrmodus2"""
         self.frontwheel.turn(90)
         self.speed = 30
         self.drive()

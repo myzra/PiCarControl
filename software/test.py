@@ -11,8 +11,9 @@ auto = BC.BaseCar()
 print("Bitte wählen Sie einen Fahrmodus:")
 print("1 - Fahrmodus 1")
 print("2 - Fahrmodus 2")
-
+#Eingabe wird in Varible wahl gespeichert
 wahl = input("Ihre Auswahl: ")
+#Vergleich welcher Fahrmodus gewählt wurde
 if wahl == '1':
     auto.fahrmodus1()
 if wahl == '2':
