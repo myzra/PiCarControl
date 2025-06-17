@@ -9,7 +9,7 @@ class BaseCar:
         self.direction = 0
         self.back_wheels = basisklassen.BackWheels()
 
-    def drive(self,richtung,lenkwinkel):
+    def drive(self,richtung,lenkwinkel=0):
         """Lässt das Auto für eine bestimmte Zeit fahren."""
         self.back_wheels.speed = self.speed
         print(self.speed)
