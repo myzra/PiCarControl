@@ -1,4 +1,5 @@
 import basisklassen
+import time
 
 class BaseCar:
     def __init__(self):
@@ -31,6 +32,38 @@ class BaseCar:
         """Stoppt das Auto."""
         self.back_wheels.stop()
         print("Das Auto wurde gestoppt.")
+
+    def fahrmodus1(self):
+        self.frontwheel.turn(90)
+        self.speed = 30
+        self.drive()
+        time.sleep(3)
+        self.speed = -30
+        self.drive()
+        time.sleep(3)
+        self.stop()
+
+    def fahrmodus2(self):
+        self.frontwheel.turn(90)
+        self.speed = 30
+        self.drive()
+        time.sleep(1)
+        self.frontwheel.turn(135)
+        self.speed = 30
+        time.sleep(8)
+        self.stop() 
+        time.sleep(2)
+        self.speed = -40
+        self.frontwheel.turn(135)
+        self.drive()
+        time.sleep(8)
+        self.stop() 
+        time.sleep(2)
+        self.frontwheel.turn(90)
+        self.speed = -40
+        self.drive()
+        time.sleep(1)
+        self.stop()    
 
 # Eine Instanz von BaseCar erstellen und die Methoden aufrufen
 

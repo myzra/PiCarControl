@@ -4,39 +4,23 @@ import basisklassen
 import BaseCar as BC
 import time
 
+
+input
 auto = BC.BaseCar()
-def fahrmodus1():
-    auto.frontwheel.turn(90)
-    auto.speed = 30
-    auto.drive()
-    time.sleep(3)
-    auto.speed = -30
-    auto.drive()
-    time.sleep(3)
-    auto.stop()
 
-def fahrmodus2():
-    auto.frontwheel.turn(90)
-    auto.speed = 30
-    auto.drive()
-    time.sleep(1)
-    auto.frontwheel.turn(135)
-    auto.speed = 30
-    time.sleep(8)
-    auto.speed = -40
-    auto.drive()
-    time.sleep(8)
-    auto.frontwheel.turn(90)
-    auto.speed = -40
-    auto.drive()
-    time.sleep(1)
-    auto.stop()
+print("Bitte wählen Sie einen Fahrmodus:")
+print("1 - Fahrmodus 1")
+print("2 - Fahrmodus 2")
 
-fahrmodus2()
+wahl = input("Ihre Auswahl: ")
+if wahl == '1':
+    auto.fahrmodus1()
+if wahl == '2':
+    auto.fahrmodus2()
 """
 # Fenster erstellen
 root = tk.Tk()
-root.title("PiCar-Steuerung")
+root.title("PiCar-Steuerung")2
 
 # Eingabefelder
 ttk.Label(root, text="Geschwindigkeit:").grid(row=0, column=0, padx=5, pady=5, sticky="e")
