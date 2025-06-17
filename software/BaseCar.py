@@ -61,7 +61,27 @@ class BaseCar:
         self.speed = -40
         self.drive()
         time.sleep(1)
-        self.stop()    
+        self.stop() 
+        self.frontwheel.turn(90)
+        self.speed = 30
+        self.drive()
+        time.sleep(1)
+        self.frontwheel.turn(45)
+        self.speed = 30
+        time.sleep(8)
+        self.stop() 
+        time.sleep(2)
+        self.speed = -40
+        self.frontwheel.turn(45)
+        self.drive()
+        time.sleep(8)
+        self.stop() 
+        time.sleep(2)
+        self.frontwheel.turn(90)
+        self.speed = -40
+        self.drive()
+        time.sleep(1)
+        self.stop()       
 
 # Eine Instanz von BaseCar erstellen und die Methoden aufrufen
 
