@@ -1,5 +1,4 @@
 import basisklassen
-import time
 
 class BaseCar:
     def __init__(self):
