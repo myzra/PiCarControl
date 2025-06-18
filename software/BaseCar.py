@@ -6,7 +6,7 @@ class BaseCar:
         """Initialisiert die Eigenschaften und erzeugt Objekte der Klasse Backwheels und Frontwheels."""
         #self.steering_angle = 0
         self.speed_tmp = 0
-        #self.direction = 0
+        self.lenkwinkel = 0
         self.back_wheels = basisklassen.BackWheels(forward_A, forward_B)
         self.frontwheels = basisklassen.FrontWheels(turning_offset)
 
@@ -21,16 +21,16 @@ class BaseCar:
         
     @property
     def steering_angle(self):
-        return self.frontwheels.get_angles()
+        return self.lenkwinkel
 
     @steering_angle.setter
     def steering_angle(self, value):
         if value < 45:
-            self.frontwheels._angles = 45
+            self.lenkwinkel = 45
         elif value > 135:
-            self.frontwheels._angles = 135
+            self.lenkwinkel = 135
         else:
-            self.frontwheels._angles = value
+            self.lenkwinkel = value
 
     @property
     def speed(self):

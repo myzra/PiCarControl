@@ -5,7 +5,10 @@ import BaseCar as BC
 import SonicCar as SC
 import time
 import json
-
+forward_A = 0
+forward_B = 0
+turning_offset = 0
+44
 try:
     with open("config.json", "r") as f:
         data = json.load(f)
@@ -30,6 +33,7 @@ print("Bitte wählen Sie einen Fahrmodus:")
 print("1 - Fahrmodus 1")
 print("2 - Fahrmodus 2")
 print("3 - Fahrmodus 3")
+print("3 - Fahrmodus 4")
 #Eingabe wird in Varible wahl gespeichert
 wahl = input("Ihre Auswahl: ")
 #Vergleich welcher Fahrmodus gewählt wurde
@@ -39,3 +43,5 @@ if wahl == '2':
     auto.fahrmodus2()
 if wahl == '3':
     auto2.fahrmodus3()
+if wahl == '4':
+    auto2.fahrmodus4()
