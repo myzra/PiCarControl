@@ -33,7 +33,7 @@ print("Bitte wählen Sie einen Fahrmodus:")
 print("1 - Fahrmodus 1")
 print("2 - Fahrmodus 2")
 print("3 - Fahrmodus 3")
-print("3 - Fahrmodus 4")
+print("4 - Fahrmodus 4")
 #Eingabe wird in Varible wahl gespeichert
 wahl = input("Ihre Auswahl: ")
 #Vergleich welcher Fahrmodus gewählt wurde

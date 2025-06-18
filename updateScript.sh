@@ -2,7 +2,7 @@
 # Das script ist dafür da dass wir keine probleme mit versionen bekommen und alle auf dem gleichen stand sind
 
 # ANPASSEN --- FUEGT HIER EUER PROJEKT-PFAD EIN !!!
-PROJECT_DIR="$HOME/camp2code/project_1/PiCarControl"
+PROJECT_DIR="$HOME/Documents/Projektwoche1/PiCarControl"
 
 cd "$PROJECT_DIR" || { echo "Projektordner nicht gefunden: $PROJECT_DIR"; exit 1; }
 
