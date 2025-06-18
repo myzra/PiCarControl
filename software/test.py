@@ -8,7 +8,7 @@ import json
 forward_A = 0
 forward_B = 0
 turning_offset = 0
-44
+
 try:
     with open("config.json", "r") as f:
         data = json.load(f)

@@ -2,6 +2,7 @@ from BaseCar import BaseCar
 import basisklassen as bk
 import time
 import threading
+import json
 
 class SonicCar(BaseCar):
     def __init__(self, forward_A, forward_B, turning_offset):
@@ -44,14 +45,14 @@ class SonicCar(BaseCar):
                 elif self.get_distance() < 80 and self.get_distance() >= 50 and self.speed != 50:
                     self.speed = 50
                     doku='ja'  
-                elif self.get_distance() < 50  and self.speed != 30:
+                elif self.get_distance() < 50 and self.get_distance() >= 0  and self.speed != 30:
                     self.speed = 30 
                     doku='ja' 
                              
                 self.steering_angle=90
                 self.frontwheels.turn(self.steering_angle)
                 if doku=='ja':
-                    self.fahrdaten.append({"Zeit": time.time(), "Richtung": self.direction, "Geschwindigkeit": self.speed, "Lenkwinkel": self.steering_angle, "Entfernung zum Hindernis": self.get_distance()})
+                    self.fahrdaten.append({"Zeit": time.time(), "Richtung": self.direction, "Geschwindigkeit": self.speed, "Lenkwinkel": self.steering_angle, "Entfernung": self.get_distance()})
                     doku='nein'
                 self.drive()
 
@@ -60,13 +61,27 @@ class SonicCar(BaseCar):
                 self.steering_angle=135
                 self.frontwheels.turn(self.steering_angle)
                 self.speed = -48
-                self.fahrdaten.append({"Zeit": time.time(), "Richtung": self.direction, "Geschwindigkeit": self.speed, "Lenkwinkel": self.steering_angle, "Entfernung zum Hindernis": self.get_distance()})
+                self.fahrdaten.append({"Zeit": time.time(), "Richtung": self.direction, "Geschwindigkeit": self.speed, "Lenkwinkel": self.steering_angle, "Entfernung": self.get_distance()})
                 self.drive()
                 time.sleep(2.5)
                 self.stop()
-                self.fahrdaten.append({"Zeit": time.time(), "Richtung": self.direction, "Geschwindigkeit": self.speed, "Lenkwinkel": self.steering_angle, "Entfernung zum Hindernis": self.get_distance()})
+                self.fahrdaten.append({"Zeit": time.time(), "Richtung": self.direction, "Geschwindigkeit": self.speed, "Lenkwinkel": self.steering_angle, "Entfernung": self.get_distance()})
                 
         self.stop()
+        dateiname = 'fahrtenbuch.json'
+        try:
+        # Vorherige Daten laden, falls vorhanden
+            with open(dateiname, "r") as datei:
+                daten = json.load(datei)
+        except FileNotFoundError:
+            daten = []
+
+        daten.append(self.fahrdaten)
+
+        # Neue Daten wieder speichern
+        with open(dateiname, "w") as datei:
+            json.dump(daten, datei, indent=4)
+            print("Eintrag gespeichert")
         print(self.fahrdaten)
 # Objekt erzeugen und Methode aufrufen
 
