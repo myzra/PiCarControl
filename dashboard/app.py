@@ -8,7 +8,28 @@ import json
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "software")))
 from BaseCar import BaseCar
 from SonicCar import SonicCar
+import json
 
+# Pfad zum Log-Ordner bestimmen
+log_ordner = os.path.join(os.path.dirname(__file__), "..", "logs")
+
+try:
+    with open(os.path.join(log_ordner,"fahrtenbuch.json"), "r", encoding="utf-8") as file:
+        data = json.load(file)
+    print("Datei erfolgreich geladen.")
+except FileNotFoundError:
+    print("Achtung: Die Datei 'fahrtenbuch.json' wurde nicht gefunden.")
+    data = []  
+except json.JSONDecodeError:
+    print("Die Datei ist vorhanden, aber enthält kein gültiges JSON.")
+    data = []
+
+print(data[0])
+print(data[1][0]["Zeit"])
+print(len(data))
+#df = pd.json_normalize(data)
+# Dann evtl. normalisieren:
+df = pd.json_normalize(data)
 # App init
 app = dash.Dash(__name__, external_stylesheets=["/assets/styles.css"])
 
@@ -37,7 +58,9 @@ modes = [
     ("Fahrmodus 6", "fahrmodus6"),
     ("Fahrmodus 7", "fahrmodus7"),
 ]
-
+anzahl_fahrten = len(data)  # z. B. Anzahl der Fahrten in deiner Struktur
+fahrten = [(f"Fahrt {i+1}", i) for i in range(anzahl_fahrten)]
+print(fahrten)
 # Worthless test data
 data = pd.DataFrame({
     "timestamp": pd.date_range(start="2025-06-17 12:00", periods=6, freq="min"),
@@ -84,6 +107,20 @@ app.layout = html.Div(className="container", children=[
         html.Button("Start", id="start-btn", n_clicks=0, className="run-btn")
     ], className="dropdown-box"),
 
+    html.P("Wähle eine Fahrt um die Daten anzuzeigen!", className="subtitle"),
+    html.Div([
+        dcc.Dropdown(
+            id="fahrt-auswahl",
+            options=[
+                {"label": name, "value": method_name}
+                for name, method_name in fahrten
+            ],
+            placeholder="Fahrt auswählen",
+            className="dropdown"
+        ),
+        
+    ], className="dropdown-box"),
+
     html.Div(id="script-output", className="output-box"),
     html.Footer("Project 1 • PiCarControl", className="footer")
 ])
@@ -109,6 +146,18 @@ def start_driving_mode(n_clicks, fahrmodus):
         return html.Pre(str(result))
     except Exception as e:
         return html.Pre(f"Fehler: {str(e)}")
+
+@app.callback(
+    Output("script-output", "children1"),
+    Input("fahrt-auswahl", "value"),
+    prevent_initial_call=True
+)
+def anzeige_daten(value):
+    max_speed = data[0]["Geschwindigkeit"].max()
+    min_speed = data[0]["Geschwindigkeit"].min()
+    avg_speed = data[0]["Geschwindigkeit"].mean()
+    print(max_speed)
+    
 
 if __name__ == "__main__":
     app.run_server(debug=True, host="0.0.0.0", port=4200)
