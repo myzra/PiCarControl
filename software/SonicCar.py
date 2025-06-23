@@ -19,13 +19,15 @@ class SonicCar(BaseCar):
     def fahrmodus3(self):
         """Bedaten der Eigenschaften des Objetkts und Aufruf der Methoden gemäß Lastenheft für Fahrmodus1"""
         while True:
-            if self.get_distance() >= 5:
+            print(f"Abstand: {self.get_distance()}" )
+            if self.get_distance() >= 5 or self.get_distance() == -2 or self.get_distance() == -4:
                 self.frontwheels.turn(90)
                 self.speed = 30
                 self.drive()
             elif self.get_distance() >= 0 and self.get_distance() <= 5:
                 self.stop()
                 break
+        return "Fahrmodus3 beendet"
                
     def fahrmodus4(self):
         """Bedaten der Eigenschaften des Objetkts und Aufruf der Methoden gemäß Lastenheft für Fahrmodus1"""
@@ -83,6 +85,7 @@ class SonicCar(BaseCar):
             json.dump(daten, datei, indent=4)
             print("Eintrag gespeichert")
         print(self.fahrdaten)
+        return "Fahrmodus4 beendet"
 # Objekt erzeugen und Methode aufrufen
 
 # mein_auto = SonicCar()

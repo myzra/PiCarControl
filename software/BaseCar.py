@@ -74,6 +74,7 @@ class BaseCar:
         self.drive()
         time.sleep(3)
         self.stop()
+        return "Fahrmodus1 beendet"
 
     def fahrmodus2(self):
         """Bedaten der Eigenschaften des Objetkts und Aufruf der Methoden gemäß Lastenheft für Fahrmodus2"""
@@ -116,7 +117,8 @@ class BaseCar:
         self.speed = -40
         self.drive()
         time.sleep(1)
-        self.stop()       
+        self.stop() 
+        return "Fahrmodus2 beendet"      
 
 # Eine Instanz von BaseCar erstellen und die Methoden aufrufen
 

@@ -7,6 +7,7 @@ import os
 import json
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "software")))
 from BaseCar import BaseCar
+from SonicCar import SonicCar
 
 # App init
 app = dash.Dash(__name__, external_stylesheets=["/assets/styles.css"])
@@ -15,10 +16,15 @@ with open(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "softwar
     config = json.load(f)
     print(config)
 
-car = BaseCar(
+bcar = BaseCar(
     forward_A=config["forward_A"],
     forward_B=config["forward_B"],
     turning_offset=config["turning_offset"]
+)
+socar = SonicCar(
+    forward_A=config["forward_A"],
+    forward_B=config["forward_B"],
+    turning_offset=config["turning_offset"]    
 )
 
 # the py files needs to be adjusted -> currently its acting more as a template for further usecase
@@ -91,8 +97,14 @@ app.layout = html.Div(className="container", children=[
 def start_driving_mode(n_clicks, fahrmodus):
     if not fahrmodus:
         return html.Pre("⚠️ Kein Fahrmodus ausgewählt.")
+    elif fahrmodus == 'fahrmodus1' or fahrmodus == 'fahrmodus2':
+        methode = getattr(bcar, fahrmodus)
+    elif fahrmodus == 'fahrmodus3' or fahrmodus == 'fahrmodus4': 
+        methode = getattr(socar, fahrmodus)
+    else:
+        #vorbereitet für Sensorcar
+        pass  
     try:
-        methode = getattr(car, fahrmodus)
         result = methode()
         return html.Pre(str(result))
     except Exception as e:
