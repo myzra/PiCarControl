@@ -2,19 +2,34 @@ import dash
 from dash import html, dcc, Output, Input, State, ctx
 import subprocess
 import pandas as pd
+import sys
+import os
+import json
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "software")))
+from BaseCar import BaseCar
 
 # App init
 app = dash.Dash(__name__, external_stylesheets=["/assets/styles.css"])
 
+with open(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "software", "config.json"))) as f:
+    config = json.load(f)
+    print(config)
+
+car = BaseCar(
+    forward_A=config["forward_A"],
+    forward_B=config["forward_B"],
+    turning_offset=config["turning_offset"]
+)
+
 # the py files needs to be adjusted -> currently its acting more as a template for further usecase
-script_files = [
-    ("Fahrmodus 1", "testing.py"),
-    ("Fahrmodus 2", "test2.py"),
-    ("Fahrmodus 3", "test3.py"),
-    ("Fahrmodus 4", "test4.py"),
-    ("Fahrmodus 5", "test5.py"),
-    ("Fahrmodus 6", "test6.py"),
-    ("Fahrmodus 7", "test7.py"),
+modes = [
+    ("Fahrmodus 1", "fahrmodus1"),
+    ("Fahrmodus 2", "fahrmodus2"),
+    ("Fahrmodus 3", "fahrmodus3"),
+    ("Fahrmodus 4", "fahrmodus4"),
+    ("Fahrmodus 5", "fahrmodus5"),
+    ("Fahrmodus 6", "fahrmodus6"),
+    ("Fahrmodus 7", "fahrmodus7"),
 ]
 
 # Worthless test data
@@ -51,9 +66,17 @@ app.layout = html.Div(className="container", children=[
     html.P("Wähle ein Fahrmodus zum Ausführen:", className="subtitle"),
 
     html.Div([
-        html.Button(name, id={"type": "script-button", "index": idx}, n_clicks=0, className="run-btn")
-        for idx, (name, _) in enumerate(script_files)
-    ], className="button-box"),
+        dcc.Dropdown(
+            id="modus-auswahl",
+            options=[
+                {"label": name, "value": method_name}
+                for name, method_name in modes
+            ],
+            placeholder="Fahrmodus auswählen",
+            className="dropdown"
+        ),
+        html.Button("Start", id="start-btn", n_clicks=0, className="run-btn")
+    ], className="dropdown-box"),
 
     html.Div(id="script-output", className="output-box"),
     html.Footer("Project 1 • PiCarControl", className="footer")
@@ -61,25 +84,19 @@ app.layout = html.Div(className="container", children=[
 
 @app.callback(
     Output("script-output", "children"),
-    Input({"type": "script-button", "index": dash.dependencies.ALL}, "n_clicks"),
+    Input("start-btn", "n_clicks"),
+    State("modus-auswahl", "value"),
     prevent_initial_call=True
 )
-def run_script(n_clicks):
-    triggered = ctx.triggered_id
-    if triggered is None:
-        return "Fehler: Kein Button erkannt."
-
-    idx = triggered["index"]
-    script_name = script_files[idx][1]
-    script_path = f"software/driving_modes/{script_name}"
-
+def start_driving_mode(n_clicks, fahrmodus):
+    if not fahrmodus:
+        return html.Pre("⚠️ Kein Fahrmodus ausgewählt.")
     try:
-        result = subprocess.check_output(["python3", script_path], stderr=subprocess.STDOUT, text=True)
-        return html.Pre(result)
-    except subprocess.CalledProcessError as e:
-        return html.Pre(f"Fehler beim Ausführen von {script_name}:\n{e.output}")
+        methode = getattr(car, fahrmodus)
+        result = methode()
+        return html.Pre(str(result))
     except Exception as e:
-        return html.Pre(f"Unerwarteter Fehler: {str(e)}")
+        return html.Pre(f"Fehler: {str(e)}")
 
 if __name__ == "__main__":
     app.run_server(debug=True, host="0.0.0.0", port=4200)
