@@ -1,5 +1,12 @@
 {
     "turning_offset": 0,
     "forward_A": 0,
-    "forward_B": 0
+    "forward_B": 0,
+    "sensor_werte": [
+        60,
+        70,
+        80,
+        60,
+        40
+    ]
 }

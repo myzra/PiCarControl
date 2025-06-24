@@ -9,6 +9,7 @@ import plotly.express as px
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "software")))
 from BaseCar import BaseCar
 from SonicCar import SonicCar
+from SensorCar import SensorCar
 import json
 
 # Pfad zum Log-Ordner bestimmen
@@ -45,7 +46,12 @@ socar = SonicCar(
     forward_B=config["forward_B"],
     turning_offset=config["turning_offset"]    
 )
-
+secar = SensorCar(
+    forward_A=config["forward_A"],
+    forward_B=config["forward_B"],
+    turning_offset=config["turning_offset"],
+    INf_offset=config["sensor_werte"]
+)
 # the py files needs to be adjusted -> currently its acting more as a template for further usecase
 modes = [
     ("Fahrmodus 1", "fahrmodus1"),
@@ -139,7 +145,7 @@ def start_driving_mode(n_clicks, fahrmodus):
     elif fahrmodus == 'fahrmodus3' or fahrmodus == 'fahrmodus4': 
         methode = getattr(socar, fahrmodus)
     else:
-        #vorbereitet für Sensorcar
+        methode = getattr(secar, fahrmodus)
         pass  
     try:
         result = methode()
