@@ -162,5 +162,39 @@
             "Lenkwinkel": 90,
             "Entfernung": 89
         }
+    ],
+    [
+        {
+            "Fahrmodus": 3,
+            "Zeit": 1750750866.3860667,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": -2
+        },
+        {
+            "Fahrmodus": 3,
+            "Zeit": 1750750872.717372,
+            "Richtung": -1,
+            "Geschwindigkeit": 48,
+            "Lenkwinkel": 135,
+            "Entfernung": 0
+        },
+        {
+            "Fahrmodus": 3,
+            "Zeit": 1750750875.2496357,
+            "Richtung": -1,
+            "Geschwindigkeit": 0,
+            "Lenkwinkel": 135,
+            "Entfernung": -2
+        },
+        {
+            "Fahrmodus": 3,
+            "Zeit": 1750750879.156408,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": 2
+        }
     ]
 ]

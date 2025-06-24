@@ -1,7 +1,6 @@
 from BaseCar import BaseCar
 import basisklassen as bk
 import time
-import threading
 import json
 import os
 
@@ -72,7 +71,7 @@ class SonicCar(BaseCar):
                 self.fahrdaten.append({"Fahrmodus": 3,"Zeit": time.time(), "Richtung": self.direction, "Geschwindigkeit": self.speed, "Lenkwinkel": self.steering_angle, "Entfernung": self.get_distance()})
                 
         self.stop()
-        log_ordner = os.path.join(os.path.dirname(__file__), "..", "logs")
+"""         log_ordner = os.path.join(os.path.dirname(__file__), "..", "logs")
         dateiname = os.path.join(log_ordner,"fahrtenbuch.json")
         print(dateiname)
         # Ordner erstellen, falls er noch nicht existiert
@@ -96,7 +95,7 @@ class SonicCar(BaseCar):
             json.dump(daten, datei, indent=4)
             print("Eintrag gespeichert")
         print(self.fahrdaten)
-        return "Fahrmodus4 beendet"
+        return "Fahrmodus4 beendet" """
 # Objekt erzeugen und Methode aufrufen
 
 #mein_auto = SonicCar(0,0,0)
