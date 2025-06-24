@@ -5,6 +5,7 @@ import pandas as pd
 import sys
 import os
 import json
+import plotly.express as px
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "software")))
 from BaseCar import BaseCar
 from SonicCar import SonicCar
@@ -118,11 +119,12 @@ app.layout = html.Div(className="container", children=[
         ),
         
     ], className="dropdown-box"),
-
+    html.Div(className="graph-container", children=[dcc.Graph(id="fahrt-graph")]),
     html.Div(id="script-output", className="output-box"),
-    html.Footer("Project 1 • PiCarControl", className="footer")
+    html.Footer("Project 1 • PiCarControl", className="footer"),
+     
 ])
-
+    
 @app.callback(
     Output("script-output", "children"),
     Input("start-btn", "n_clicks"),
@@ -172,7 +174,54 @@ def update_dashboard_data(selected_fahrt_id):
         f"{avg_speed:.2f} km/h",
         f"{min_speed:.2f} km/h"
         )
+@app.callback(
+    Output("fahrt-graph", "figure"),
+    Input("fahrt-auswahl", "value"),
+    prevent_initial_call=False
+)
+def update_graph(selected_fahrt_id):
+    """
+    Erstellt und aktualisiert den Graphen basierend auf der ausgewählten Fahrt.
+    """
+    # Standard-Graph für den Fall, dass keine Daten angezeigt werden können
+    # if selected_fahrt_id == None:
+    #     selected_fahrt_id = 0
+        
+    try:
+        df=pd.DataFrame(logdata[selected_fahrt_id])
+    except:
+        print("keine Auswahl getroffen")
+    empty_fig = px.line(template="plotly_dark").update_layout(
+        paper_bgcolor='rgba(0,0,0,0)', 
+        plot_bgcolor='rgba(25,28,32,0.8)'
+    )
+
+    if selected_fahrt_id is None:
+        empty_fig.update_layout(title_text="Bitte eine Fahrt zur Analyse auswählen")
+        return empty_fig
+
     
+
+    if df.empty:
+        empty_fig.update_layout(title_text=f"Fahrt {selected_fahrt_id + 1} enthält keine Daten")
+        return empty_fig
+
+    # Graph-Erstellung
+    df_gefiltert = df.melt(id_vars=['Zeit'], value_vars=['Geschwindigkeit'], var_name='Metrik', value_name='Wert')
+    fig = px.line(
+        df_gefiltert, 
+        x='Zeit', 
+        y='Wert', 
+        color='Metrik', 
+        title=f"Datenanalyse für Fahrt {selected_fahrt_id + 1}", 
+        template="plotly_dark"
+    )
+    fig.update_layout(
+        paper_bgcolor='rgba(0,0,0,0)', 
+        plot_bgcolor='rgba(25,28,32,0.8)',
+        legend_title_text='Messgröße'
+    )
+    return fig    
 
 if __name__ == "__main__":
     app.run_server(debug=True, host="0.0.0.0", port=4200)
