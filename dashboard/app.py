@@ -15,28 +15,25 @@ log_ordner = os.path.join(os.path.dirname(__file__), "..", "logs")
 
 try:
     with open(os.path.join(log_ordner,"fahrtenbuch.json"), "r", encoding="utf-8") as file:
-        data = json.load(file)
+        logdata = json.load(file)
     print("Datei erfolgreich geladen.")
 except FileNotFoundError:
     print("Achtung: Die Datei 'fahrtenbuch.json' wurde nicht gefunden.")
-    data = []  
+    logdata = []  
 except json.JSONDecodeError:
     print("Die Datei ist vorhanden, aber enthält kein gültiges JSON.")
-    data = []
+    logdata = []
 
-print(data[0])
-print(data[1][0]["Zeit"])
-print(len(data))
-#df = pd.json_normalize(data)
+
+
 # Dann evtl. normalisieren:
-df = pd.json_normalize(data)
+df = pd.json_normalize(logdata)
 # App init
 app = dash.Dash(__name__, external_stylesheets=["/assets/styles.css"])
 
 with open(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "software", "config.json"))) as f:
     config = json.load(f)
-    print(config)
-
+    
 bcar = BaseCar(
     forward_A=config["forward_A"],
     forward_B=config["forward_B"],
@@ -58,9 +55,9 @@ modes = [
     ("Fahrmodus 6", "fahrmodus6"),
     ("Fahrmodus 7", "fahrmodus7"),
 ]
-anzahl_fahrten = len(data)  # z. B. Anzahl der Fahrten in deiner Struktur
+anzahl_fahrten = len(logdata)  # z. B. Anzahl der Fahrten in deiner Struktur
 fahrten = [(f"Fahrt {i+1}", i) for i in range(anzahl_fahrten)]
-print(fahrten)
+
 # Worthless test data
 data = pd.DataFrame({
     "timestamp": pd.date_range(start="2025-06-17 12:00", periods=6, freq="min"),
@@ -74,10 +71,10 @@ avg_speed = data["speed"].mean()
 total_distance = data["distance"].sum()
 total_duration = data["timestamp"].iloc[-1] - data["timestamp"].iloc[0]
 
-def create_card(title, value, unit):
+def create_card(card_id, title, value, unit):
     return html.Div(className="kpi-card", children=[
         html.H4(title),
-        html.P(f"{value:.2f} {unit}")
+        html.P(id=card_id, children=f"{value:.2f} {unit}")
     ])
 
 # Webui structure-code
@@ -85,11 +82,12 @@ app.layout = html.Div(className="container", children=[
     html.H1("PiCarStats Dashboard", className="title"),
     html.P("Not gonna lie, the styles.css is completely generated lol", className="disclaimer"), # for information only, not really needed
     html.Div(className="kpi-container", children=[
-    create_card("Maximale Geschwindigkeit", max_speed, "km/h"),
-    create_card("Minimale Geschwindigkeit", min_speed, "km/h"),
-    create_card("Durchschnittsgeschwindigkeit", avg_speed, "km/h"),
-    create_card("Gesamtfahrstrecke", total_distance, "km"),
-    create_card("Gesamtfahrzeit", total_duration.total_seconds() / 60, "Minuten"),
+    create_card("kpi-max-speed","Maximale Geschwindigkeit", max_speed, "km/h"),
+    create_card("kpi-min-speed","Minimale Geschwindigkeit", min_speed, "km/h"),
+    create_card("kpi-avg-speed","Durchschnittsgeschwindigkeit", avg_speed, "km/h"),
+    create_card("kpi-total-distance","Gesamtfahrstrecke", total_distance, "km"),
+    create_card("kpi-total-duration","Gesamtfahrzeit", total_duration.total_seconds() / 60, "Minuten"),
+   
     ]),
 
     html.P("Wähle ein Fahrmodus zum Ausführen:", className="subtitle"),
@@ -133,7 +131,7 @@ app.layout = html.Div(className="container", children=[
 )
 def start_driving_mode(n_clicks, fahrmodus):
     if not fahrmodus:
-        return html.Pre("⚠️ Kein Fahrmodus ausgewählt.")
+        return html.Pre("Kein Fahrmodus ausgewählt.")
     elif fahrmodus == 'fahrmodus1' or fahrmodus == 'fahrmodus2':
         methode = getattr(bcar, fahrmodus)
     elif fahrmodus == 'fahrmodus3' or fahrmodus == 'fahrmodus4': 
@@ -148,15 +146,32 @@ def start_driving_mode(n_clicks, fahrmodus):
         return html.Pre(f"Fehler: {str(e)}")
 
 @app.callback(
-    Output("script-output", "children1"),
+    Output("kpi-max-speed", "children"),
+    Output("kpi-avg-speed", "children"),
+    Output("kpi-min-speed", "children"),
     Input("fahrt-auswahl", "value"),
-    prevent_initial_call=True
+    prevent_initial_call=False 
 )
-def anzeige_daten(value):
-    max_speed = data[0]["Geschwindigkeit"].max()
-    min_speed = data[0]["Geschwindigkeit"].min()
-    avg_speed = data[0]["Geschwindigkeit"].mean()
-    print(max_speed)
+def update_dashboard_data(selected_fahrt_id): 
+    if selected_fahrt_id == None:
+        return (
+        f"--- km/h",
+        f"--- km/h",
+        f"--- km/h"
+        )
+    else:
+        df=pd.DataFrame(logdata[selected_fahrt_id]) 
+        print(df["Geschwindigkeit"].mean())
+        print(df)
+        max_speed = df["Geschwindigkeit"].max()
+        min_speed = df["Geschwindigkeit"].min()
+        avg_speed = df["Geschwindigkeit"].mean()
+        
+        return (
+        f"{max_speed:.2f} km/h",
+        f"{avg_speed:.2f} km/h",
+        f"{min_speed:.2f} km/h"
+        )
     
 
 if __name__ == "__main__":
