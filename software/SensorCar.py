@@ -58,11 +58,12 @@ class SensorCar(BaseCar):
                     zaehler = 0         
                 else: # Stopp bei Fahrbahnende wenn 10 Schleifen keiner der 5 Sensor belegt wird.
                     zaehler += 1
-                    if zaehler == 10:
+                    if zaehler == 20:
                         self.stop()
                         break
                 if doku=='ja':
-                    self.fahrdaten.append({"Fahrmodus": 3, "Zeit": time.time(), "Richtung": self.direction, "Geschwindigkeit": self.speed, "Lenkwinkel": self.steering_angle, "Entfernung": self.get_distance()})
+                    self.fahrdaten.append({"Fahrmodus": 5, "Zeit": time.time(), "Richtung": self.direction,"Geschwindigkeit": self.speed, "Lenkwinkel": self.steering_angle})
+                    #self.fahrdaten.append({"Fahrmodus": 3, "Zeit": time.time(), "Richtung": self.direction, "Geschwindigkeit": self.speed, "Lenkwinkel": self.steering_angle, "Entfernung": self.USo.distance()})
                     doku = 'nein'
                     print(self.fahrdaten)
     def kalibrieren(self):
