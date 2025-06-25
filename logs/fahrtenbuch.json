@@ -324,5 +324,2466 @@
                 0
             ]
         }
+    ],
+    [
+        {
+            "Fahrmodus": 4,
+            "Zeit": 1750839083.773513,
+            "Richtung": 1,
+            "Geschwindigkeit": 100,
+            "Lenkwinkel": 90,
+            "Entfernung": -2
+        },
+        {
+            "Fahrmodus": 4,
+            "Zeit": 1750839095.6940145,
+            "Richtung": -1,
+            "Geschwindigkeit": 48,
+            "Lenkwinkel": 135,
+            "Entfernung": 74
+        },
+        {
+            "Fahrmodus": 4,
+            "Zeit": 1750839098.2440257,
+            "Richtung": -1,
+            "Geschwindigkeit": 0,
+            "Lenkwinkel": 135,
+            "Entfernung": -2
+        },
+        {
+            "Fahrmodus": 4,
+            "Zeit": 1750839101.1564293,
+            "Richtung": 1,
+            "Geschwindigkeit": 100,
+            "Lenkwinkel": 90,
+            "Entfernung": -4
+        }
+    ],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750840583.327995,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        }
+    ],
+    [],
+    [
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750841338.880775,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750841339.0653243,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                1,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750841339.2857375,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        }
+    ],
+    [
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750842574.6840217,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        }
+    ],
+    [
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750842605.141928,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": -4,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750842605.2693312,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750842605.360612,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        }
+    ],
+    [],
+    [
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750842677.266022,
+            "Richtung": 0,
+            "Geschwindigkeit": 0,
+            "Lenkwinkel": 70,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                1,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [],
+    [
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750842692.7094426,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750842692.9203105,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -4,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750842693.0369353,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        }
+    ],
+    [
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851648.9560905,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851649.5741217,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": -4,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851649.7688713,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851649.901472,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851652.3361266,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 45,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                1,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851652.5291333,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                1,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851652.7094166,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851688.5566208,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851688.6873322,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851688.8172483,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851691.5673833,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 45,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                1,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851691.6985915,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                1,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851691.9698505,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851698.6751628,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851699.1990585,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851700.451574,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851705.3174834,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -4,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851705.9159696,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851706.7685945,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851707.523976,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": -4,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851708.7787294,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -4,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851709.2422526,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851709.3706305,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851711.4642942,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 45,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                1,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851711.593115,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                1,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851711.8191106,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 32,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851712.1673987,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851712.4972298,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -4,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851713.1384854,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851986.316383,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851986.931797,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851987.4837487,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851987.8928292,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                1,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851988.8712122,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -4,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851989.2815835,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -4,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851989.979316,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750851991.87765,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": -4,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852058.2370982,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -4,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852058.7837248,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852059.485299,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -4,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852059.9028878,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -4,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852060.662733,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852061.280105,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852062.8264368,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -4,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852063.09284,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852063.2214024,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852063.5505939,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852063.68003,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -4,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852063.8980885,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852064.0945306,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -4,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852065.0249622,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852065.1541696,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852065.8884192,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852152.9739077,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -4,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852153.3838246,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -4,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852153.8609746,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852154.2754476,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852154.46985,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852155.212724,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 169,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852155.3604887,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": 149,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852156.3808787,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852325.3722508,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852325.9935775,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852326.6820457,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852327.0278153,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852327.5942914,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852328.144977,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852329.2725925,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852330.1086566,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852330.5680192,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852330.9879808,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852331.2022934,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852331.7886968,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852331.9172328,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852332.5814073,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 71,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852332.6188028,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": 70,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852333.1165307,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": 63,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852516.1924536,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852516.7501159,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852516.8798702,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852519.0949264,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 45,
+            "Entfernung": 64,
+            "IR-Sensor": [
+                1,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852519.2180398,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                1,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852519.4922752,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852519.7523267,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852520.0542746,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852527.3144934,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852527.9666626,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -4,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852529.2485645,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": -4,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852794.0987077,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -4,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852794.5960543,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 76,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852795.5767193,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                1,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852795.791254,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 45,
+            "Entfernung": 64,
+            "IR-Sensor": [
+                1,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852795.9816139,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                1,
+                1,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852796.6388435,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 45,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                1,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852796.9549453,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": 45,
+            "IR-Sensor": [
+                1,
+                1,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852797.3014917,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 45,
+            "Entfernung": 39,
+            "IR-Sensor": [
+                1,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852798.5647895,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                1,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852802.2451317,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852802.659126,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852803.3848128,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852803.9395487,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852804.5871084,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852805.0731862,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                1,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852805.5663645,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852805.926294,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": 109,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852897.9727726,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 85,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852898.1596167,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 81,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852898.202294,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": 80,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852898.295536,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 79,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852898.6107507,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 74,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852898.740959,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 72,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852899.5675666,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852899.700165,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852900.984985,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": 41,
+            "IR-Sensor": [
+                1,
+                1,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852901.055928,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 45,
+            "Entfernung": 40,
+            "IR-Sensor": [
+                1,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852902.3402128,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852902.684357,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 45,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                1,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852904.0584757,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                1,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852904.755213,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                1,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852905.5300212,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": -4,
+            "IR-Sensor": [
+                0,
+                1,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852907.5538943,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852908.0356448,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852909.122193,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 130,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852909.5512521,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852910.3965695,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 109,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852910.6718612,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 111,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750852916.2739737,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": 37,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750853672.248703,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 80,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750853672.7798398,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 72,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750853673.387763,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 65,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750853674.0582495,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750853674.939688,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": 41,
+            "IR-Sensor": [
+                0,
+                1,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750853675.0315294,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 42,
+            "IR-Sensor": [
+                1,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750853675.075088,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 45,
+            "Entfernung": 39,
+            "IR-Sensor": [
+                1,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750853675.446511,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 35,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750853678.704889,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": 11,
+            "IR-Sensor": [
+                0,
+                1,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750853684.9725726,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750853685.5965261,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                1,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750853685.7938712,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 45,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                1,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750853686.1930833,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                1,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750853695.9257889,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": -4,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750853696.074832,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750853696.276739,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                1,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750853696.684771,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750853697.5565152,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750853697.6851516,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 6,
+            "Zeit": 1750853698.1122797,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": -2,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        }
     ]
 ]

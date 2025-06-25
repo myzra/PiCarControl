@@ -3,7 +3,7 @@ import basisklassen as bk
 import time
 import json
 import os
-
+from save import save_fahrdaten
 
 class SonicCar(BaseCar):
     def __init__(self, forward_A, forward_B, turning_offset):
@@ -28,7 +28,7 @@ class SonicCar(BaseCar):
             elif self.get_distance() >= 0 and self.get_distance() <= 5:
                 self.stop()
                 break
-        return "Fahrmodus3 beendet"
+        return "Fahrmodus 3 beendet"
                
     def fahrmodus4(self):
         """Bedaten der Eigenschaften des Objetkts und Aufruf der Methoden gemäß Lastenheft für Fahrmodus1"""
@@ -39,7 +39,7 @@ class SonicCar(BaseCar):
         while time.time() - startzeit < dauer:
             print(f"Richtung: {self.direction} Entfernung: {self.get_distance()} Geschwindigkeit:{self.speed} {self.speed_tmp}")
             if self.get_distance() >= 5 or self.get_distance() == -2:
-                if self.get_distance() >= 100 and self.speed != 100:
+                if (self.get_distance() >= 100 or self.get_distance() == -2) and self.speed != 100:
                     self.speed = 100
                     doku='ja'
                 elif 80 <= self.get_distance() < 100 and self.speed != 80:  #80 <= self.get_distance() < 100
@@ -55,7 +55,7 @@ class SonicCar(BaseCar):
                 self.steering_angle=90
                 self.frontwheels.turn(self.steering_angle)
                 if doku=='ja':
-                    self.fahrdaten.append({"Fahrmodus": 3, "Zeit": time.time(), "Richtung": self.direction, "Geschwindigkeit": self.speed, "Lenkwinkel": self.steering_angle, "Entfernung": self.get_distance()})
+                    self.fahrdaten.append({"Fahrmodus": 4, "Zeit": time.time(), "Richtung": self.direction, "Geschwindigkeit": self.speed, "Lenkwinkel": self.steering_angle, "Entfernung": self.get_distance()})
                     doku='nein'
                 self.drive()
 
@@ -64,39 +64,13 @@ class SonicCar(BaseCar):
                 self.steering_angle=135
                 self.frontwheels.turn(self.steering_angle)
                 self.speed = -48
-                self.fahrdaten.append({"Fahrmodus": 3,"Zeit": time.time(), "Richtung": self.direction, "Geschwindigkeit": self.speed, "Lenkwinkel": self.steering_angle, "Entfernung": self.get_distance()})
+                self.fahrdaten.append({"Fahrmodus": 4,"Zeit": time.time(), "Richtung": self.direction, "Geschwindigkeit": self.speed, "Lenkwinkel": self.steering_angle, "Entfernung": self.get_distance()})
                 self.drive()
                 time.sleep(2.5)
                 self.stop()
-                self.fahrdaten.append({"Fahrmodus": 3,"Zeit": time.time(), "Richtung": self.direction, "Geschwindigkeit": self.speed, "Lenkwinkel": self.steering_angle, "Entfernung": self.get_distance()})
+                self.fahrdaten.append({"Fahrmodus": 4,"Zeit": time.time(), "Richtung": self.direction, "Geschwindigkeit": self.speed, "Lenkwinkel": self.steering_angle, "Entfernung": self.get_distance()})
                 
         self.stop()
-"""         log_ordner = os.path.join(os.path.dirname(__file__), "..", "logs")
-        dateiname = os.path.join(log_ordner,"fahrtenbuch.json")
-        print(dateiname)
-        # Ordner erstellen, falls er noch nicht existiert
-        if not os.path.exists(log_ordner):
-            os.makedirs(log_ordner)
-            print(f"Log-Ordner wurde erstellt: {log_ordner}")
-        else:
-            print(f"Log-Ordner existiert bereits: {log_ordner}")
-            
-        try:
-            # Vorherige Daten laden, falls vorhanden
-            with open(dateiname, "r") as datei:
-                daten = json.load(datei)
-        except FileNotFoundError:
-            daten = []
-
-        daten.append(self.fahrdaten)
-
-        # Neue Daten wieder speichern
-        with open(dateiname, "w") as datei:
-            json.dump(daten, datei, indent=4)
-            print("Eintrag gespeichert")
-        print(self.fahrdaten)
-        return "Fahrmodus4 beendet" """
-# Objekt erzeugen und Methode aufrufen
-
-#mein_auto = SonicCar(0,0,0)
-#mein_auto.fahrmodus4()
+        speichern = save_fahrdaten(self.fahrdaten)   
+        speichern.save()
+        return "Fahrmodus 4 beendet"
