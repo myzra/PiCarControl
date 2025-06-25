@@ -24,11 +24,9 @@ class save_fahrdaten:
             daten = []
             print("Datei konnte nicht geöffnet werden!")
         daten.append(self.fahrdaten)
-        print(daten)
         
         # Neue Daten wieder speichern
         with open(self.dateiname, "w") as datei:
-            print(daten)
             json.dump(daten, datei, indent=4)
             print("Eintrag gespeichert")
         print(self.fahrdaten)
