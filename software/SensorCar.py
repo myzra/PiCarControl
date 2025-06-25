@@ -192,5 +192,5 @@ class SensorCar(BaseCar):
             print(self.USo.distance())
             time.sleep(1)
 car = SensorCar(0,0,0,[60,70,80,60,40])  
-car.fahrmodus6()
+#car.fahrmodus6()
 #car.kalibrieren()
