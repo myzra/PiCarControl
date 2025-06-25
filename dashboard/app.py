@@ -54,7 +54,7 @@ secar = SensorCar(
     INf_offset=config["sensor_werte"]
 )
 
-# dict for dashboard dropdown menu providing both visual text and backend method 
+# list for dashboard dropdown menu providing both visual text and backend method 
 modes = [
     ("Fahrmodus 1", "fahrmodus1"),
     ("Fahrmodus 2", "fahrmodus2"),
@@ -64,6 +64,18 @@ modes = [
     ("Fahrmodus 6", "fahrmodus6"),
     ("Fahrmodus 7", "fahrmodus7"),
 ]
+
+# dict for dahsboard driving mode preview
+fahrmodus_beschreibungen = {
+    "fahrmodus1": "Fahrmodus 1: Einfaches Vorwärtsfahren für Testzwecke.",
+    "fahrmodus2": "Fahrmodus 2: Hinderniserkennung mit einfachem Stopp.",
+    "fahrmodus3": "Fahrmodus 3: Linienverfolgung mit Infrarotsensoren.",
+    "fahrmodus4": "Fahrmodus 4: Ultraschallsensoren für Abstandsmessung.",
+    "fahrmodus5": "Fahrmodus 5: Erweiterte Linienverfolgung mit Kurvenerkennung.",
+    "fahrmodus6": "Fahrmodus 6: Hindernisumfahrung im Parcoursmodus.",
+    "fahrmodus7": "Fahrmodus 7: Vollautomatisierter Fahrmodus mit Logging.",
+}
+
 anzahl_fahrten = len(logdata)  # z. B. Anzahl der Fahrten in deiner Struktur
 fahrten = [(f"Fahrt {i+1}", i) for i in range(anzahl_fahrten)]
 
@@ -112,7 +124,8 @@ app.layout = html.Div(className="container", children=[
             placeholder="Fahrmodus auswählen",
             className="dropdown"
         ),
-        html.Button("Start", id="start-btn", n_clicks=0, className="run-btn")
+        html.Button("Start", id="start-btn", n_clicks=0, className="run-btn"),
+        html.Div(id="fahrmodus-info", className="info-box")
     ], className="dropdown-box"),
 
     html.P("Wähle eine Fahrt um die Daten anzuzeigen!", className="subtitle"),
@@ -133,6 +146,20 @@ app.layout = html.Div(className="container", children=[
     html.Footer("Project 1 • PiCarControl", className="footer"),
      
 ])
+
+"""function to update the dropdown driving mode preview info"""
+@app.callback(
+    Output("fahrmodus-info", "children"),
+    Input("modus-auswahl", "value"),
+    prevent_inital_call=False
+)
+def update_fahrmodus_info(selected_fahrmodus):
+    if not selected_fahrmodus:
+        return "Bitte einen Fahrmodus auswählen, um mehr Informationen zu erhalten."
+    beschreibung = fahrmodus_beschreibungen.get(
+        selected_fahrmodus, "Für diesen Fahrmodus liegt keine Beschreibung vor."
+    )
+    return beschreibung
 
 """Function that triggers the appropriate method of the corresponding class based on the dropdown menu selection"""
 @app.callback(
