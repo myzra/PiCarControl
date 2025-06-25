@@ -133,6 +133,12 @@ class SensorCar(BaseCar):
                     zaehler = 0         
                 else: # Stopp bei Fahrbahnende wenn 10 Schleifen keiner der 5 Sensor belegt wird.
                     zaehler += 1
+                    if zaehler == 10:
+                        if sensor == 0 or sensor == 1:
+                            self.steering_angle = 100
+                        if sensor == 3 or sensor == 4:
+                            self.steering_angle = 80
+                        print("korrektur ausgefuehrt")    
                     if zaehler == 20:
                         if sensor == 2:
                             self.stop()
@@ -192,5 +198,5 @@ class SensorCar(BaseCar):
             print(self.USo.distance())
             time.sleep(1)
 car = SensorCar(0,0,0,[60,70,80,60,40])  
-#car.fahrmodus6()
+car.fahrmodus6()
 #car.kalibrieren()
