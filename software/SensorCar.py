@@ -93,7 +93,7 @@ class SensorCar(BaseCar):
             #time.sleep(1)
 
             INf_daten = self.INf.read_digital() # Liste mit IR-Werte Sensor 1-5
-            if INf_daten[2] == 1: # 2 = Sensor in der Mitte --> Abfrage belegt.
+            if INf_daten[2] == 1 and INf_daten[0] == 0 and INf_daten[1] == 0 and INf_daten[3] == 0 and INf_daten[4] == 0: # 2 = Sensor in der Mitte --> Abfrage belegt.
                 sensor = 2
                 if self.steering_angle != 90:
                     doku = "ja"
@@ -192,5 +192,5 @@ class SensorCar(BaseCar):
             print(self.USo.distance())
             time.sleep(1)
 car = SensorCar(0,0,0,[60,70,80,60,40])  
-#car.fahrmodus6()
+car.fahrmodus6()
 #car.kalibrieren()
