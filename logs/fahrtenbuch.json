@@ -1,200 +1,328 @@
 [
     [
         {
-            "Fahrmodus": 3,
-            "Zeit": 1750684594.203104,
-            "Richtung": 1,
-            "Geschwindigkeit": 100,
-            "Lenkwinkel": 90,
-            "Entfernung": 104
-        },
-        {
-            "Fahrmodus": 3,
-            "Zeit": 1750684594.7770104,
-            "Richtung": 1,
-            "Geschwindigkeit": 50,
-            "Lenkwinkel": 90,
-            "Entfernung": 76
-        },
-        {
-            "Fahrmodus": 3,
-            "Zeit": 1750684596.2848427,
+            "Fahrmodus": 5,
+            "Zeit": 1750835579.6465192,
             "Richtung": 1,
             "Geschwindigkeit": 30,
             "Lenkwinkel": 90,
-            "Entfernung": 33
+            "Entfernung": 142
         },
         {
-            "Fahrmodus": 3,
-            "Zeit": 1750684598.5429237,
-            "Richtung": -1,
-            "Geschwindigkeit": 48,
-            "Lenkwinkel": 135,
-            "Entfernung": 3
-        },
-        {
-            "Fahrmodus": 3,
-            "Zeit": 1750684601.0850606,
-            "Richtung": -1,
-            "Geschwindigkeit": 0,
-            "Lenkwinkel": 135,
-            "Entfernung": 79
-        },
-        {
-            "Fahrmodus": 3,
-            "Zeit": 1750684601.3384752,
+            "Fahrmodus": 5,
+            "Zeit": 1750835579.7148864,
             "Richtung": 1,
-            "Geschwindigkeit": 50,
-            "Lenkwinkel": 90,
-            "Entfernung": 79
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": 139
         },
         {
-            "Fahrmodus": 3,
-            "Zeit": 1750684602.6191115,
+            "Fahrmodus": 5,
+            "Zeit": 1750835581.0770795,
             "Richtung": 1,
             "Geschwindigkeit": 30,
             "Lenkwinkel": 90,
-            "Entfernung": 48
+            "Entfernung": 124
         },
         {
-            "Fahrmodus": 3,
-            "Zeit": 1750684603.9267695,
-            "Richtung": 1,
-            "Geschwindigkeit": 80,
-            "Lenkwinkel": 90,
-            "Entfernung": -2
-        },
-        {
-            "Fahrmodus": 3,
-            "Zeit": 1750684604.6226718,
+            "Fahrmodus": 5,
+            "Zeit": 1750835581.9801676,
             "Richtung": 1,
             "Geschwindigkeit": 30,
-            "Lenkwinkel": 90,
-            "Entfernung": 1
-        },
-        {
-            "Fahrmodus": 3,
-            "Zeit": 1750684604.7955914,
-            "Richtung": -1,
-            "Geschwindigkeit": 48,
-            "Lenkwinkel": 135,
-            "Entfernung": 1
-        },
-        {
-            "Fahrmodus": 3,
-            "Zeit": 1750684607.3396738,
-            "Richtung": -1,
-            "Geschwindigkeit": 0,
-            "Lenkwinkel": 135,
-            "Entfernung": -2
-        },
-        {
-            "Fahrmodus": 3,
-            "Zeit": 1750684610.3633797,
-            "Richtung": 1,
-            "Geschwindigkeit": 80,
-            "Lenkwinkel": 90,
-            "Entfernung": -2
-        },
-        {
-            "Fahrmodus": 3,
-            "Zeit": 1750684611.6225526,
-            "Richtung": 1,
-            "Geschwindigkeit": 30,
-            "Lenkwinkel": 90,
-            "Entfernung": -2
+            "Lenkwinkel": 110,
+            "Entfernung": 113
         }
     ],
     [
         {
-            "Fahrmodus": 3,
-            "Zeit": 1750684706.6752508,
+            "Fahrmodus": 5,
+            "Zeit": 1750836088.0054529,
             "Richtung": 1,
             "Geschwindigkeit": 30,
             "Lenkwinkel": 90,
-            "Entfernung": -2
+            "Entfernung": 108
         },
         {
-            "Fahrmodus": 3,
-            "Zeit": 1750684713.9152684,
-            "Richtung": -1,
-            "Geschwindigkeit": 48,
-            "Lenkwinkel": 135,
-            "Entfernung": -2
-        },
-        {
-            "Fahrmodus": 3,
-            "Zeit": 1750684716.5585759,
-            "Richtung": -1,
-            "Geschwindigkeit": 0,
-            "Lenkwinkel": 135,
-            "Entfernung": -2
-        },
-        {
-            "Fahrmodus": 3,
-            "Zeit": 1750684719.3774333,
+            "Fahrmodus": 5,
+            "Zeit": 1750836088.1614132,
             "Richtung": 1,
-            "Geschwindigkeit": 50,
-            "Lenkwinkel": 90,
-            "Entfernung": 72
-        },
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 107
+        }
+    ],
+    [
         {
-            "Fahrmodus": 3,
-            "Zeit": 1750684722.1265001,
-            "Richtung": -1,
-            "Geschwindigkeit": 48,
-            "Lenkwinkel": 135,
-            "Entfernung": 0
-        },
-        {
-            "Fahrmodus": 3,
-            "Zeit": 1750684724.6703596,
-            "Richtung": -1,
-            "Geschwindigkeit": 0,
-            "Lenkwinkel": 135,
-            "Entfernung": 212
-        },
-        {
-            "Fahrmodus": 3,
-            "Zeit": 1750684724.867288,
+            "Fahrmodus": 5,
+            "Zeit": 1750836193.1927202,
             "Richtung": 1,
-            "Geschwindigkeit": 100,
+            "Geschwindigkeit": 30,
             "Lenkwinkel": 90,
+            "Entfernung": 82,
+            "Entfernung1": 117
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750836193.3642993,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 115,
+            "Entfernung1": 114
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750836194.8226333,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": 94,
+            "Entfernung1": 95
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750836195.339715,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -4,
+            "Entfernung1": 90
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750836197.271009,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": 68,
+            "Entfernung1": 68
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750836197.416127,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": 66,
+            "Entfernung1": 67
+        }
+    ],
+    [
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750836367.1457405,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": 140,
+            "Entfernung1": 139
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750836367.2440088,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": 142,
+            "Entfernung1": 138
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750836368.5150716,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": 123,
+            "Entfernung1": 124
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750836369.4742744,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 54,
+            "Entfernung1": 110
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750836370.692966,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
+            "Entfernung": 93,
+            "Entfernung1": 94
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750836371.1289876,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 89,
+            "Entfernung1": 89
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750836373.049237,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": 67,
+            "Entfernung1": 68
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750836373.168399,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": 66,
+            "Entfernung1": 66
+        }
+    ],
+    [
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750837218.037093,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": 153
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750837218.3154144,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": -4
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750837218.7519042,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": 137
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750837218.8428183,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": -4
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750837220.8143651,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": 113
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750837220.9486785,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 56
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750837222.6625888,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 135,
             "Entfernung": 89
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750837223.1416097,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 86
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750837224.797849,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 90,
+            "Entfernung": 67
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750837224.9496822,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": 65
         }
     ],
     [
         {
-            "Fahrmodus": 3,
-            "Zeit": 1750750866.3860667,
+            "Fahrmodus": 5,
+            "Zeit": 1750837329.8050985,
             "Richtung": 1,
             "Geschwindigkeit": 30,
             "Lenkwinkel": 90,
-            "Entfernung": -2
+            "Entfernung": 140,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
         },
         {
-            "Fahrmodus": 3,
-            "Zeit": 1750750872.717372,
-            "Richtung": -1,
-            "Geschwindigkeit": 48,
-            "Lenkwinkel": 135,
-            "Entfernung": 0
+            "Fahrmodus": 5,
+            "Zeit": 1750837329.8815284,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 70,
+            "Entfernung": 138,
+            "IR-Sensor": [
+                0,
+                1,
+                0,
+                0,
+                0
+            ]
         },
         {
-            "Fahrmodus": 3,
-            "Zeit": 1750750875.2496357,
-            "Richtung": -1,
-            "Geschwindigkeit": 0,
-            "Lenkwinkel": 135,
-            "Entfernung": -2
-        },
-        {
-            "Fahrmodus": 3,
-            "Zeit": 1750750879.156408,
+            "Fahrmodus": 5,
+            "Zeit": 1750837331.1613941,
             "Richtung": 1,
             "Geschwindigkeit": 30,
             "Lenkwinkel": 90,
-            "Entfernung": 2
+            "Entfernung": 123,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "Fahrmodus": 5,
+            "Zeit": 1750837332.0310056,
+            "Richtung": 1,
+            "Geschwindigkeit": 30,
+            "Lenkwinkel": 110,
+            "Entfernung": 113,
+            "IR-Sensor": [
+                0,
+                0,
+                0,
+                1,
+                0
+            ]
         }
     ]
 ]

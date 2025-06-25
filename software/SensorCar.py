@@ -3,7 +3,7 @@ import basisklassen as bk
 import time
 import json
 import os
-#import save
+from save import save_fahrdaten
 
 class SensorCar(BaseCar):
     def __init__(self, forward_A, forward_B, turning_offset, INf_offset):
@@ -62,10 +62,22 @@ class SensorCar(BaseCar):
                         self.stop()
                         break
                 if doku=='ja':
-                    self.fahrdaten.append({"Fahrmodus": 5, "Zeit": time.time(), "Richtung": self.direction,"Geschwindigkeit": self.speed, "Lenkwinkel": self.steering_angle})
-                    #self.fahrdaten.append({"Fahrmodus": 3, "Zeit": time.time(), "Richtung": self.direction, "Geschwindigkeit": self.speed, "Lenkwinkel": self.steering_angle, "Entfernung": self.USo.distance()})
+                    liste = self.INf.read_digital()
+                    for i in range(len(liste)):
+                        liste[i] = int(liste[i])
+                    print(liste)
+                    print(type(liste))
+                    print(type(liste[0]))
+                    try:
+                        
+                        self.fahrdaten.append({"Fahrmodus": 5, "Zeit": time.time(), "Richtung": self.direction,"Geschwindigkeit": self.speed, "Lenkwinkel": self.steering_angle,"Entfernung": self.USo.distance(), "IR-Sensor": liste})
+                        
+                    except Exception as e:
+                        print(f"Konnte nicht gespeichert werden: {e}")
                     doku = 'nein'
                     print(self.fahrdaten)
+        speichern = save_fahrdaten(self.fahrdaten)   
+        speichern.save()         
     def kalibrieren(self):
         while True:
             print(self.INf.read_analog())
