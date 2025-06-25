@@ -35,7 +35,8 @@ app = dash.Dash(__name__, external_stylesheets=["/assets/styles.css"])
 
 with open(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "software", "config.json"))) as f:
     config = json.load(f)
-    
+
+# created car instances   
 bcar = BaseCar(
     forward_A=config["forward_A"],
     forward_B=config["forward_B"],
@@ -52,7 +53,8 @@ secar = SensorCar(
     turning_offset=config["turning_offset"],
     INf_offset=config["sensor_werte"]
 )
-# the py files needs to be adjusted -> currently its acting more as a template for further usecase
+
+# dict for dashboard dropdown menu providing both visual text and backend method 
 modes = [
     ("Fahrmodus 1", "fahrmodus1"),
     ("Fahrmodus 2", "fahrmodus2"),
@@ -78,6 +80,7 @@ avg_speed = data["speed"].mean()
 total_distance = data["distance"].sum()
 total_duration = data["timestamp"].iloc[-1] - data["timestamp"].iloc[0]
 
+# creating kpi-cards
 def create_card(card_id, title, value, unit):
     return html.Div(className="kpi-card", children=[
         html.H4(title),
@@ -130,7 +133,8 @@ app.layout = html.Div(className="container", children=[
     html.Footer("Project 1 • PiCarControl", className="footer"),
      
 ])
-    
+
+"""Function that triggers the appropriate method of the corresponding class based on the dropdown menu selection"""
 @app.callback(
     Output("script-output", "children"),
     Input("start-btn", "n_clicks"),
@@ -153,6 +157,7 @@ def start_driving_mode(n_clicks, fahrmodus):
     except Exception as e:
         return html.Pre(f"Fehler: {str(e)}")
 
+"""Updates the KPI cards based on the selected trip from the logbook"""
 @app.callback(
     Output("kpi-max-speed", "children"),
     Output("kpi-avg-speed", "children"),
@@ -180,19 +185,14 @@ def update_dashboard_data(selected_fahrt_id):
         f"{avg_speed:.2f} km/h",
         f"{min_speed:.2f} km/h"
         )
+
+"""Creates and updates the graph based on the selected trip. Default graph to display when no data is available"""
 @app.callback(
     Output("fahrt-graph", "figure"),
     Input("fahrt-auswahl", "value"),
     prevent_initial_call=False
 )
 def update_graph(selected_fahrt_id):
-    """
-    Erstellt und aktualisiert den Graphen basierend auf der ausgewählten Fahrt.
-    """
-    # Standard-Graph für den Fall, dass keine Daten angezeigt werden können
-    # if selected_fahrt_id == None:
-    #     selected_fahrt_id = 0
-        
     try:
         df=pd.DataFrame(logdata[selected_fahrt_id])
     except:
