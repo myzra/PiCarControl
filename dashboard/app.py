@@ -9,7 +9,7 @@ import plotly.express as px
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "software")))
 from BaseCar import BaseCar # type: ignore
 from SonicCar import SonicCar # type: ignore
-from SensorCar import SensorCar # type: ignore
+from SensorCar import SensorCar, Kalibrieren # type: ignore
 import json
 
 # Pfad zum Log-Ordner bestimmen
@@ -34,7 +34,7 @@ current_driving_thread = None
 df = pd.json_normalize(logdata)
 
 # App init
-app = dash.Dash(__name__, external_stylesheets=["/assets/styles.css"])
+app = dash.Dash(__name__, external_stylesheets=["/assets/styles.css"], suppress_callback_exceptions=True)
 
 with open(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "software", "config.json"))) as f:
     config = json.load(f)
@@ -148,9 +148,57 @@ app.layout = html.Div(className="container", children=[
         html.Div(id="fahrmodus-info", className="info-box")
     ], className="dropdown-box"),
     html.Div(id="script-output", className="output-box"),
+    html.Button("Kalibrieren", id="kalibrieren-btn", n_clicks=0),
+
+    html.Div(id="offset-input", style={"margin-top": "20px"}),
     html.Footer("Project 1 • PiCarControl", className="footer"),
      
 ])
+
+"""function to calibrate the config.json"""
+@app.callback(
+    Output("script-output", "children", allow_duplicate=True),
+    Output("offset-input", "children"),
+    Input("kalibrieren-btn", "n_clicks"),
+    prevent_initial_call=True
+)
+def calibrate(n_clicks):
+    c = Kalibrieren()
+    config = c.config_einlesen()
+    out = c.kalibrieren(config["sensor_werte"])
+
+    output_fields = html.Div([
+        html.Label("Neuer Offset (jeweils eine Zahl):"),
+        html.Div([
+            dcc.Input(id=f"offset-{i}", type="number", style={"margin-right": "5px"}) for i in range(5)
+        ]),
+        html.Button("Speichern", id="save-offset-btn", n_clicks=0, style={"margin-top": "10px"})
+    ])
+    formatted = "\n".join(str(zeile) for zeile in out)
+    return html.Pre(f"Kalibrierung abgeschlossen:\n{formatted}"), output_fields
+
+"""Function to save the users input offset into config file"""
+@app.callback(
+    Output("script-output", "children", allow_duplicate=True),
+    Output("offset-input", "children", allow_duplicate=True),
+    Input("save-offset-btn", "n_clicks"),
+    State("offset-0", "value"),
+    State("offset-1", "value"),
+    State("offset-2", "value"),
+    State("offset-3", "value"),
+    State("offset-4", "value"),
+    prevent_initial_call=True
+)
+def save_offset(n_clicks, o0, o1, o2, o3, o4):
+    if n_clicks < 1:
+        raise dash.exceptions.PreventUpdate
+
+    new_off = [o0, o1, o2, o3, o4]
+    c = Kalibrieren()
+    old_config = c.config_einlesen()
+    c.config_speichern(old_config, new_off)
+
+    return f'Neuer Offset gespeichert: {new_off}', html.Div()
 
 """function to update the dropdown driving mode preview info"""
 @app.callback(
@@ -168,7 +216,7 @@ def update_fahrmodus_info(selected_fahrmodus):
 
 """Function that triggers the appropriate method of the corresponding class based on the dropdown menu selection"""
 @app.callback(
-    Output("script-output", "children"),
+    Output("script-output", "children", allow_duplicate=True),
     Input("start-btn", "n_clicks"),
     Input("stop-btn", "n_clicks"),
     State("modus-auswahl", "value"),

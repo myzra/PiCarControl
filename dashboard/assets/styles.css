@@ -547,3 +547,244 @@ body::before {
         0 4px 15px rgba(0, 0, 0, 0.4),
         0 0 20px rgba(239, 68, 68, 0.4);
 }
+
+/* Loading animation for dynamic content */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.loading {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Calibration Section Styling */
+.calibration-section {
+    background: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Kalibrieren Button - Special styling */
+#kalibrieren-btn {
+    background: linear-gradient(135deg, var(--success), #059669);
+    color: var(--text-primary);
+    border: 2px solid transparent;
+    border-radius: 15px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 1rem;
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+#kalibrieren-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #10b981, #065f46);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+#kalibrieren-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    transition: all 0.6s ease;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+#kalibrieren-btn:hover {
+    transform: translateY(-3px);
+    border-color: var(--success);
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(16, 185, 129, 0.4);
+}
+
+#kalibrieren-btn:hover::before {
+    opacity: 1;
+}
+
+#kalibrieren-btn:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+#kalibrieren-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(16, 185, 129, 0.4);
+}
+
+/* Offset Input Container */
+#offset-input {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    position: relative;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Offset Input Labels */
+#offset-input label {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Offset Input Fields Container */
+#offset-input > div:nth-child(2) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 0;
+}
+
+/* Individual Offset Input Fields */
+input[id^="offset-"] {
+    background: rgba(30, 41, 59, 0.8);
+    border: 2px solid rgba(59, 130, 246, 0.3);
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    min-width: 100px;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 2px 10px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+input[id^="offset-"]:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.3),
+        0 0 20px var(--glow-blue),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+input[id^="offset-"]:hover {
+    border-color: var(--accent-blue);
+    box-shadow: 
+        0 3px 12px rgba(0, 0, 0, 0.25),
+        0 0 15px var(--glow-cyan);
+}
+
+input[id^="offset-"]::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+/* Save Offset Button */
+#save-offset-btn {
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+    color: var(--text-primary);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin: 1.5rem auto 0;
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+#save-offset-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--accent-blue), var(--secondary-blue));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+#save-offset-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    transition: all 0.6s ease;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+#save-offset-btn:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-blue);
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.4),
+        0 0 30px var(--glow-blue);
+}
+
+#save-offset-btn:hover::before {
+    opacity: 1;
+}
+
+#save-offset-btn:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+#save-offset-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.4),
+        0 0 20px var(--glow-blue);
+}
