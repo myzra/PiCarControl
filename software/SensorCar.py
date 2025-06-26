@@ -148,6 +148,15 @@ class Kalibrieren(): # Funktion zum Kalibrieren der Sensoren über das Dashboard
         return config
     
     def config_speichern(self,config,INf_offset):
+        """Mit dieser Funktion können neue offset Werte eingetragen werden.
+        Es wird überprüft, ob die Werte kleiner als 301 sind. Zudem wird geprüft, ob es sich bei der Eingabe um ganze Zahlen handelt."""
+        for i, val in enumerate(INf_offset):
+            if not isinstance(val, int):
+                raise ValueError(f"Die Eingabe an Position {i+1} ist keine ganze Zahl, gültige Werte sind 1 bis 300")
+            if val > 301:
+                raise ValueError(f"Die Eingabe {val} an Position {i+1} ist zu groß, gültige Werte sind 1 bis 300")
+            if val < 1:
+                raise ValueError(f"Die Eingabe {val} an Position {i+1} ist zu klein, gültige Werte sind 1 bis 300")
         print(type(INf_offset))
         config["sensor_werte"] = INf_offset
         with open(self.Dateipfad, "w") as datei:
