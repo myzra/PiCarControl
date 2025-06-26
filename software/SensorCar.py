@@ -136,12 +136,44 @@ class SensorCar(BaseCar):
     def fahrmodus7(self): #Funktion für Fahrmodus 7.
         self.fahrmodus(2)
         return "Fahrmodus 7 beendet"
-    def kalibrieren(self):
-        while True:
-            print(self.INf.read_analog())
-            print(self.INf.read_digital())
-            print(self.USo.distance())
+
+class Kalibrieren():
+    def __init__(self):
+        self.Dateipfad = os.path.abspath(os.path.join(os.path.dirname(__file__),"config.json"))
+        pass
+    
+    def config_einlesen(self):
+        with open(self.Dateipfad, "r") as f:
+            config = json.load(f)
+        return config
+    
+    def config_speichern(self,config,INf_offset):
+        print(type(INf_offset))
+        config["sensor_werte"] = INf_offset
+        with open(self.Dateipfad, "w") as datei:
+            json.dump(config, datei, indent=4)
+            print("Offset Infrarot-Sensor gespeichert!")
+
+    def string_zu_int_liste(self, wert):
+        neuer_offset = wert
+        neuer_offset1 = neuer_offset.split(',')
+        neuer_offset = [int(item) for item in neuer_offset1]
+        return neuer_offset
+
+
+    def kalibrieren(self, INf_offset = [0,0,0,0,0]):
+        print(INf_offset)
+        INf = bk.Infrared(INf_offset)
+        i = 0
+        while i < 6:
+            print(INf.read_analog())
+            print(INf.read_digital())
             time.sleep(1)
-car = SensorCar(0,0,0,[60,70,80,60,40])  
-#car.fahrmodus7()
-#car.kalibrieren()
+            i += 1
+
+# sensor_calib = Kalibrieren()
+# config = sensor_calib.config_einlesen()
+# config_offset = config["sensor_werte"]
+# sensor_calib.kalibrieren(config_offset)
+# neuer_offset = sensor_calib.string_zu_int_liste(input("Bitte den Offset im Format 0,0,0,0,0 eingeben:"))
+# sensor_calib.config_speichern(config, neuer_offset)
