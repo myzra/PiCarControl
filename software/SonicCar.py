@@ -42,7 +42,7 @@ class SonicCar(BaseCar):
         doku = 'nein'                     # Steuerung für Datenaufzeichnung
 
         while time.time() - startzeit < dauer:
-            print(f"Richtung: {self.direction} Entfernung: {self.get_distance()} Geschwindigkeit:{self.speed} {self.speed_tmp}")
+            print(f"Richtung: {self.direction} Entfernung: {self.get_distance()} Geschwindigkeit:{self.speed} ")
 
             # Wenn ausreichend Abstand oder kein Hindernis erkennbar
             if self.get_distance() >= 5 or self.get_distance() == -2:
@@ -105,3 +105,6 @@ class SonicCar(BaseCar):
         speichern = save_fahrdaten(self.fahrdaten)     # Messdaten abspeichern
         speichern.save()
         return "Fahrmodus 4 beendet"
+
+car = SonicCar(0,0,0,)
+car.fahrmodus4()
