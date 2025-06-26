@@ -1,15 +1,15 @@
 import dash
 from dash import html, dcc, Output, Input, State, ctx
-import subprocess
+import threading
 import pandas as pd
 import sys
 import os
 import json
 import plotly.express as px
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "software")))
-from BaseCar import BaseCar
-from SonicCar import SonicCar
-from SensorCar import SensorCar
+from BaseCar import BaseCar # type: ignore
+from SonicCar import SonicCar # type: ignore
+from SensorCar import SensorCar # type: ignore
 import json
 
 # Pfad zum Log-Ordner bestimmen
@@ -26,10 +26,13 @@ except json.JSONDecodeError:
     print("Die Datei ist vorhanden, aber enthält kein gültiges JSON.")
     logdata = []
 
-
+# stop flag
+stop_driving = False
+current_driving_thread = None
 
 # Dann evtl. normalisieren:
 df = pd.json_normalize(logdata)
+
 # App init
 app = dash.Dash(__name__, external_stylesheets=["/assets/styles.css"])
 
@@ -112,22 +115,6 @@ app.layout = html.Div(className="container", children=[
    
     ]),
 
-    html.P("Wähle ein Fahrmodus zum Ausführen:", className="subtitle"),
-
-    html.Div([
-        dcc.Dropdown(
-            id="modus-auswahl",
-            options=[
-                {"label": name, "value": method_name}
-                for name, method_name in modes
-            ],
-            placeholder="Fahrmodus auswählen",
-            className="dropdown"
-        ),
-        html.Button("Start", id="start-btn", n_clicks=0, className="run-btn"),
-        html.Div(id="fahrmodus-info", className="info-box")
-    ], className="dropdown-box"),
-
     html.P("Wähle eine Fahrt um die Daten anzuzeigen!", className="subtitle"),
     html.Div([
         dcc.Dropdown(
@@ -142,6 +129,24 @@ app.layout = html.Div(className="container", children=[
         
     ], className="dropdown-box"),
     html.Div(className="graph-container", children=[dcc.Graph(id="fahrt-graph")]),
+
+    html.P("Wähle ein Fahrmodus zum Ausführen:", className="subtitle"),
+    html.Div([
+        dcc.Dropdown(
+            id="modus-auswahl",
+            options=[
+                {"label": name, "value": method_name}
+                for name, method_name in modes
+            ],
+            placeholder="Fahrmodus auswählen",
+            className="dropdown"
+        ),
+        html.Div([
+            html.Button("Start", id="start-btn", n_clicks=0, className="run-btn"),
+            html.Button("Stop", id="stop-btn", n_clicks=0, className="stop-btn", style={"margin-left": "10px"}),
+        ], style={"display": "flex"}),
+        html.Div(id="fahrmodus-info", className="info-box")
+    ], className="dropdown-box"),
     html.Div(id="script-output", className="output-box"),
     html.Footer("Project 1 • PiCarControl", className="footer"),
      
@@ -165,24 +170,75 @@ def update_fahrmodus_info(selected_fahrmodus):
 @app.callback(
     Output("script-output", "children"),
     Input("start-btn", "n_clicks"),
+    Input("stop-btn", "n_clicks"),
     State("modus-auswahl", "value"),
     prevent_initial_call=True
 )
-def start_driving_mode(n_clicks, fahrmodus):
-    if not fahrmodus:
-        return html.Pre("Kein Fahrmodus ausgewählt.")
-    elif fahrmodus == 'fahrmodus1' or fahrmodus == 'fahrmodus2':
-        methode = getattr(bcar, fahrmodus)
-    elif fahrmodus == 'fahrmodus3' or fahrmodus == 'fahrmodus4': 
-        methode = getattr(socar, fahrmodus)
-    else:
-        methode = getattr(secar, fahrmodus)
-        pass  
-    try:
-        result = methode()
-        return html.Pre(str(result))
-    except Exception as e:
-        return html.Pre(f"Fehler: {str(e)}")
+def handle_driving_control(start_clicks, stop_clicks, fahrmodus):
+    global current_driving_thread, stop_driving
+    
+    if ctx.triggered_id == "stop-btn":
+        stop_driving = True
+        bcar.request_stop()
+        socar.request_stop()
+        secar.request_stop()
+        return html.Pre("Stop-Signal gesendet...")
+    
+    elif ctx.triggered_id == "start-btn":
+        if not fahrmodus:
+            return html.Pre("Kein Fahrmodus ausgewählt.")
+        
+        stop_driving = False
+        
+        # Determine which car instance to use
+        if fahrmodus == 'fahrmodus1' or fahrmodus == 'fahrmodus2':
+            car_instance = bcar
+        elif fahrmodus == 'fahrmodus3' or fahrmodus == 'fahrmodus4':
+            car_instance = socar
+        else:
+            car_instance = secar
+        
+        try:
+            methode = getattr(car_instance, fahrmodus)
+            
+            def run_driving_mode():
+                try:
+                    result = methode()
+                    return result
+                except Exception as e:
+                    return f"Fehler: {str(e)}"
+            
+            current_driving_thread = threading.Thread(target=run_driving_mode)
+            current_driving_thread.start()
+            
+            return html.Pre(f"{fahrmodus} gestartet...")
+            
+        except Exception as e:
+            return html.Pre(f"Fehler: {str(e)}")
+    
+    return html.Pre("Unbekannte Aktion.")
+
+"""Stops the current executed driving mode"""
+@app.callback(
+    Output("stop-btn", "children"),
+    Input("stop-btn", "n_clicks"),
+    prevent_initial_call=True
+)
+def stop_driving_mode(n_clicks):
+    global stop_driving
+    stop_driving = True
+    return "Stop"
+
+"""Resets the flag"""
+@app.callback(
+    Output("start-btn", "children"),
+    Input("start-btn", "n_clicks"),
+    prevent_initial_call=True
+)
+def reset_stop_flag(n_clicks):
+    global stop_driving
+    stop_driving = False
+    return "Start"
 
 """Updates the KPI cards based on the selected trip from the logbook"""
 @app.callback(
