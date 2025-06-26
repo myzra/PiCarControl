@@ -80,6 +80,7 @@ fahrmodus_beschreibungen = {
 }
 
 anzahl_fahrten = len(logdata)  # z. B. Anzahl der Fahrten in deiner Struktur
+print(f"Anzahl der Fahrten: {anzahl_fahrten}")
 fahrten = [(f"Fahrt {i+1}", i) for i in range(anzahl_fahrten)]
 
 # Worthless test data
@@ -293,28 +294,36 @@ def reset_stop_flag(n_clicks):
     Output("kpi-max-speed", "children"),
     Output("kpi-avg-speed", "children"),
     Output("kpi-min-speed", "children"),
+    Output("kpi-total-duration", "children"),
+    Output("kpi-total-distance", "children"),
     Input("fahrt-auswahl", "value"),
     prevent_initial_call=False 
 )
 def update_dashboard_data(selected_fahrt_id): 
     if selected_fahrt_id == None:
         return (
-        f"--- km/h",
-        f"--- km/h",
-        f"--- km/h"
+        f"--- cm/s",
+        f"--- cm/s",
+        f"--- cm/s",
+        f"--- sec.",
+        f"--- cm"
         )
     else:
+        print(logdata)
         df=pd.DataFrame(logdata[selected_fahrt_id]) 
         print(df["Geschwindigkeit"].mean())
         print(df)
         max_speed = df["Geschwindigkeit"].max()
         min_speed = df["Geschwindigkeit"].min()
         avg_speed = df["Geschwindigkeit"].mean()
-        
+        total_duration = df['Zeit'].max()-df['Zeit'].min()
+        total_distance = total_duration * avg_speed
         return (
-        f"{max_speed:.2f} km/h",
-        f"{avg_speed:.2f} km/h",
-        f"{min_speed:.2f} km/h"
+        f"{max_speed:.2f} cm/s",
+        f"{avg_speed:.2f} cm/s",
+        f"{min_speed:.2f} cm/s",
+        f"{total_duration:.2f} sec.",
+        f"{total_distance:.2f} cm"
         )
 
 """Creates and updates the graph based on the selected trip. Default graph to display when no data is available"""
