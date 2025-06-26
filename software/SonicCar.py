@@ -106,5 +106,3 @@ class SonicCar(BaseCar):
         speichern.save()
         return "Fahrmodus 4 beendet"
 
-car = SonicCar(0,0,0,)
-car.fahrmodus4()
