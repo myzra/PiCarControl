@@ -5,7 +5,7 @@ import json
 import os
 from save import save_fahrdaten
 
-class SensorCar(BaseCar):
+class SensorCar(BaseCar): # Klasse Sensor Car mit Vererbung aus Base Car um auf den Infrarot- und Ultraschallsensor zugreifen zu können.
     def __init__(self, forward_A, forward_B, turning_offset, INf_offset):
         super().__init__(forward_A, forward_B, turning_offset)
         self.USo = bk.Ultrasonic()
@@ -14,12 +14,12 @@ class SensorCar(BaseCar):
         self.fahrdaten = []
 
     def fahrmodus(self, funktionserweiterung=0): #Funktion für Fahrmodus, Funktionserweiterung=1 --> für "scharfe" Kurven mit rücksetzen. Funktionserweiterung=2 --> "scharfe" Kurven + integration Ultraschallsensor.
-        sensor = 99
-        drive_korrektur = 99
-        doku = "nein"
-        zaehler = 0 #Wird benötigt wenn Fahrzeug zwischen dem Sensor steht --> Weiterfahrt zwischen IR-Sensor.
+        sensor = 99 # Wird benötigt für das Rücksetzen. Merker für aktuellen Lenkwinkel.
+        drive_korrektur = 99 # Wird benötigt für Stop aus der Mitte. Merker für eingestellten Lenkwinkel.
+        doku = "nein" # Wird benötigt zur Dokumentation. Doku "ja" speichert die Werte über save.py in den log.json. Doku "nein" speichert den Wert nicht.
+        zaehler = 0 # Wird benötigt wenn Fahrzeug zwischen dem Sensor steht --> Weiterfahrt zwischen IR-Sensor, leichte Lenkkorrektur bei Zähler 10 und stop bei Zähler 20.
         while True:
-            if funktionserweiterung == 2:
+            if funktionserweiterung == 2: # Funktion stop bei aktivierten Ultraschallsensor --> Abstand zum Hinternis kleiner 5 cm.
                 if 0< self.USo.distance() < 5:
                     self.stop()
                     break
@@ -68,20 +68,20 @@ class SensorCar(BaseCar):
                     self.steering_angle = 135
                     self.frontwheels.turn(self.steering_angle)
                     zaehler = 0         
-                else: # Stopp bei Fahrbahnende wenn 20 Schleifen keiner der 5 Sensor belegt wird.
+                else: 
                     zaehler += 1
-                    if zaehler == 10:
+                    if zaehler == 10: # Fahrbahnkorrektur wenn bei 10 Schleifen keiner der 5 Sensor belegt wird.
                         if sensor == 0 or sensor == 1:
                             self.steering_angle = 100
                         if sensor == 3 or sensor == 4:
                             self.steering_angle = 80
                         print("korrektur ausgefuehrt")    
-                    if zaehler == 20:
+                    if zaehler == 20: # Stopp bei Fahrbahnende wenn 20 Schleifen keiner der 5 Sensor belegt wird.
                         if sensor == 2:
                             self.stop()
                             break
                         else:
-                            if funktionserweiterung > 0:
+                            if funktionserweiterung > 0: # Rücksetzen und Fahrtkorrektur bei verlassen der Fahrbahn aufgrund enger kurven.
                                 self.stop()
                                 while True:
                                     INf_daten = self.INf.read_digital()
@@ -137,7 +137,7 @@ class SensorCar(BaseCar):
         self.fahrmodus(2)
         return "Fahrmodus 7 beendet"
 
-class Kalibrieren():
+class Kalibrieren(): # Funktion zum Kalibrieren der Sensoren über das Dashboard.
     def __init__(self):
         self.Dateipfad = os.path.abspath(os.path.join(os.path.dirname(__file__),"config.json"))
         pass
@@ -154,26 +154,19 @@ class Kalibrieren():
             json.dump(config, datei, indent=4)
             print("Offset Infrarot-Sensor gespeichert!")
 
-    def string_zu_int_liste(self, wert):
-        neuer_offset = wert
-        neuer_offset1 = neuer_offset.split(',')
-        neuer_offset = [int(item) for item in neuer_offset1]
-        return neuer_offset
-
-
     def kalibrieren(self, INf_offset = [0,0,0,0,0]):
         print(INf_offset)
         INf = bk.Infrared(INf_offset)
-        i = 0
-        while i < 6:
-            print(INf.read_analog())
-            print(INf.read_digital())
+        out = []
+        for _ in range(6):
+            out.append((INf.read_analog()))
+            out.append((INf.read_digital()))
             time.sleep(1)
-            i += 1
+        return out
 
-# sensor_calib = Kalibrieren()
-# config = sensor_calib.config_einlesen()
-# config_offset = config["sensor_werte"]
-# sensor_calib.kalibrieren(config_offset)
-# neuer_offset = sensor_calib.string_zu_int_liste(input("Bitte den Offset im Format 0,0,0,0,0 eingeben:"))
-# sensor_calib.config_speichern(config, neuer_offset)
+#sensor_calib = Kalibrieren()
+#config = sensor_calib.config_einlesen()
+#config_offset = config["sensor_werte"]
+#sensor_calib.kalibrieren(config_offset)
+#neuer_offset = sensor_calib.string_zu_int_liste(input("Bitte den Offset im Format 0,0,0,0,0 eingeben:"))
+#sensor_calib.config_speichern(config, neuer_offset)
