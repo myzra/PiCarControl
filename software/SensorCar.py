@@ -3,6 +3,7 @@ import basisklassen as bk
 import time
 import json
 import os
+import pandas as pd
 from save import save_fahrdaten
 
 class SensorCar(BaseCar): # Klasse Sensor Car mit Vererbung aus Base Car um auf den Infrarot- und Ultraschallsensor zugreifen zu können.
@@ -12,6 +13,7 @@ class SensorCar(BaseCar): # Klasse Sensor Car mit Vererbung aus Base Car um auf 
         self.distance = 0
         self.INf = bk.Infrared(INf_offset)
         self.fahrdaten = []
+        self.debug=[]
 
     def fahrmodus(self, funktionserweiterung=0): #Funktion für Fahrmodus, Funktionserweiterung=1 --> für "scharfe" Kurven mit rücksetzen. Funktionserweiterung=2 --> "scharfe" Kurven + integration Ultraschallsensor.
         sensor = 99 # Wird benötigt für das Rücksetzen. Merker für aktuellen Lenkwinkel.
@@ -27,11 +29,13 @@ class SensorCar(BaseCar): # Klasse Sensor Car mit Vererbung aus Base Car um auf 
             print(self.INf.read_analog())
             print(self.INf.read_digital())
             print(self.USo.distance())
+            
             #time.sleep(1)
 
             INf_daten = self.INf.read_digital() # Liste mit IR-Werte Sensor 1-5
             if INf_daten[2] == 1 and INf_daten[0] == 0 and INf_daten[1] == 0 and INf_daten[3] == 0 and INf_daten[4] == 0: # 2 = Sensor in der Mitte --> Abfrage belegt.
-                sensor = 2
+                #if INf_daten == [0,0,1,0,0]:
+                sensor = 2 
                 if self.steering_angle != 90:
                     doku = "ja"
                 self.steering_angle = 90
@@ -85,14 +89,18 @@ class SensorCar(BaseCar): # Klasse Sensor Car mit Vererbung aus Base Car um auf 
                                 self.stop()
                                 while True:
                                     INf_daten = self.INf.read_digital()
+                                    self.debug.append([INf_daten,self.INf.read_analog(), sensor, drive_korrektur, "R"])
                                     if sensor == 0 or sensor == 1:
                                         drive_korrektur = 4
                                         print("sensor 0 und 1")
                                         self.steering_angle = 135
-                                    if sensor == 3 or sensor == 4:
+                                    elif sensor == 3 or sensor == 4:
                                         drive_korrektur = 0
                                         print("sensor 3 und 4")
                                         self.steering_angle = 45
+                                    else:
+                                        drive_korrektur = 2
+                                        self.steering_angle = 90
                                     self.frontwheels.turn(self.steering_angle)
                                     self.speed = -30
                                     print(sensor)
@@ -110,6 +118,7 @@ class SensorCar(BaseCar): # Klasse Sensor Car mit Vererbung aus Base Car um auf 
                                         self.speed = 30
                                         self.drive()
                                         break
+                self.debug.append([INf_daten, self.INf.read_analog(), sensor, 99, "V"])
                 if doku=='ja':
                     liste = self.INf.read_digital()
                     for i in range(len(liste)):
@@ -124,7 +133,7 @@ class SensorCar(BaseCar): # Klasse Sensor Car mit Vererbung aus Base Car um auf 
                     except Exception as e:
                         print(f"Konnte nicht gespeichert werden: {e}")
                     doku = 'nein'
-                    print(self.fahrdaten)
+                    #print(self.fahrdaten)
         speichern = save_fahrdaten(self.fahrdaten)   
         speichern.save()
     def fahrmodus5(self): #Funktion für Fahrmodus 5.
@@ -167,15 +176,34 @@ class Kalibrieren(): # Funktion zum Kalibrieren der Sensoren über das Dashboard
         print(INf_offset)
         INf = bk.Infrared(INf_offset)
         out = []
-        for _ in range(6):
+        for _ in range(100):
             out.append((INf.read_analog()))
             out.append((INf.read_digital()))
             time.sleep(1)
+            print(INf.read_analog())
+            print(INf.read_digital())
         return out
+    
+    def __del__(self):
+        self.stop()
+        print()
 
-#sensor_calib = Kalibrieren()
-#config = sensor_calib.config_einlesen()
-#config_offset = config["sensor_werte"]
+
+if __name__ == "__main__":
+    sensor_calib = Kalibrieren()
+    config = sensor_calib.config_einlesen()
+    config_offset = config["sensor_werte"]
+    car = SensorCar(0,0,0,config_offset)
+    try:
+        car.fahrmodus7()
+    except Exception as e:
+        car.stop()
+        print(f"Skriptabbruch durch Fehler {e}")
+    spalten = ['sensor_digital','sensor_analog', 'letzter erkannte sensor', 'Korrektur', 'Richtung']
+    df = pd.DataFrame(car.debug, columns=spalten)
+    pd.set_option('display.max_rows', None)
+    print (df)
+
 #sensor_calib.kalibrieren(config_offset)
 #neuer_offset = sensor_calib.string_zu_int_liste(input("Bitte den Offset im Format 0,0,0,0,0 eingeben:"))
 #sensor_calib.config_speichern(config, neuer_offset)
