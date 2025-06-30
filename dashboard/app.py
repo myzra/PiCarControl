@@ -106,7 +106,7 @@ def create_card(card_id, title, value, unit):
 # Webui structure-code
 app.layout = html.Div(className="container", children=[
     html.H1("PiCarStats Dashboard", className="title"),
-    html.P("Not gonna lie, the styles.css is completely generated lol", className="disclaimer"), # for information only, not really needed
+    html.P("Not gonna lie, the styles.css is almost completely generated lol", className="disclaimer"), # for information only, not really needed
     html.Div(className="kpi-container", children=[
     create_card("kpi-max-speed","Maximale Geschwindigkeit", max_speed, "km/h"),
     create_card("kpi-min-speed","Minimale Geschwindigkeit", min_speed, "km/h"),
