@@ -218,7 +218,7 @@ class Kalibrieren(): # Funktion zum Kalibrieren der Sensoren über das Dashboard
         print(INf_offset)
         INf = bk.Infrared(INf_offset)
         out = []
-        for _ in range(100):
+        for _ in range(6):
             out.append((INf.read_analog()))
             out.append((INf.read_digital()))
             time.sleep(1)

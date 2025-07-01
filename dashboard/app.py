@@ -110,7 +110,7 @@ app.layout = html.Div(className="container", children=[
     html.Div(className="kpi-container", children=[
     create_card("kpi-max-speed","Maximale Geschwindigkeit", max_speed, "km/h"),
     create_card("kpi-min-speed","Minimale Geschwindigkeit", min_speed, "km/h"),
-    create_card("kpi-avg-speed","Durchschnittsgeschwindigkeit", avg_speed, "km/h"),
+    create_card("kpi-avg-speed","Durchschnittliche Geschwindigkeit", avg_speed, "km/h"),
     create_card("kpi-total-distance","Gesamtfahrstrecke", total_distance, "km"),
     create_card("kpi-total-duration","Gesamtfahrzeit", total_duration.total_seconds() / 60, "Minuten"),
    
@@ -166,6 +166,7 @@ app.layout = html.Div(className="container", children=[
 def calibrate(n_clicks):
     c = Kalibrieren()
     config = c.config_einlesen()
+    print("test")
     out = c.kalibrieren(config["sensor_werte"])
 
     output_fields = html.Div([
